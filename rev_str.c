@@ -12,34 +12,24 @@ int getsize(char* s)
 
 char* strev(char* s)
 {
-        int start, end, count, i;
-        char*  res;
-        char tmp;
+        int length;
+        char* res;
 
-        start = 0;
-        end = getsize(s);
-        count = 0;
+        length = getsize(s) - 1;
 
-        while (count != (end / 2)) {
-                tmp = s[start];
-                s[start] = s[end];
-                s[end] = tmp;
-                ++count;
-                ++ start;
-                --end;
+        while (length >= 0) {
+
+                 printf("%c", s[length]);
+                --length;
+
         }
-
-        for (i = 0; i < getsize(s); i ++) {
-                res[i] = printf("%c", s[i]);
-        }
-        return res;
 }
 
 int main()
 {
         char str[] = "hello";
-        char* rev = strev(str);
-        printf("%s\n", rev);
-
+        char* res = strev(str);
+        printf("%s", res);
+        printf("\n");
         return 0;
 }
